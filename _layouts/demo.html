@@ -6,25 +6,7 @@
 	<p class="blurb">
 		{{ page.blurb }}
 	</p>
-	<p class="tags">
-		{% strip %}
-			{% for cat in page.categories %}
-				<a href='/{{ cat | downcase }}'>{{ cat }}</a>
-			{% endfor %}
-
-	        {% for demo_subcat in page.subcategories %}
-		        {% for site_subcat in site.pages %}
-			        {% if demo_subcat == site_subcat.title %}
-				        <a href='{{site_subcat.url}}'>{{site_subcat.title}}</a>
-			        {% endif %}
-		        {% endfor %}
-	        {% endfor %}
-
-	        {% for tag in page.tags %}
-		        <a href='/search/?q={{ tag | downcase }}'>{{ tag }}</a>
-	        {% endfor %}
-        {% endstrip %}
-    </p>
+	
     <hr>
 
 		{% include social.html %}
